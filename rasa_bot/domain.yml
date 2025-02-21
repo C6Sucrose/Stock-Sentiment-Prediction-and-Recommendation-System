@@ -1,0 +1,52 @@
+  version: "3.1"
+
+  intents:
+    - greet
+    - goodbye
+    - bot_challenge
+    - get_stock_details
+    - get_stock_prediction
+    - get_stock_recommendations
+    - get_sentiment_analysis
+    - affirm
+    - deny
+
+  entities:
+    - stock
+
+  slots:
+   stock:
+     type: text
+     influence_conversation: true
+     mappings:
+     - type: from_entity
+       entity: stock
+
+  responses:
+    utter_greet:
+      - text: "Hello! I'm FinBot, your financial assistant. I can help you with stock predictions, sentiment analysis, and market recommendations. What would you like to know?"
+
+    utter_goodbye:
+      - text: "Goodbye! Feel free to return anytime for more financial insights."
+
+    utter_iamabot:
+      - text: "I am FinBot, designed to help you with stock market analysis and predictions."
+
+    utter_ask_stock:
+      - text: "Which stock would you like to analyze? I can help you with AAPL, GOOGL, MSFT, NVDA, or TSLA."
+
+    utter_invalid_stock:
+      - text: "I'm sorry, I can only analyze AAPL, GOOGL, MSFT, NVDA, or TSLA at this time."
+
+  actions:
+    - action_predict_stock
+    - action_get_sentiment
+    - action_recommend_stock
+    - action_inquire_stock_details
+    - action_validate_stock
+
+
+
+  session_config:
+    session_expiration_time: 60
+    carry_over_slots_to_new_session: true

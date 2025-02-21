@@ -1,0 +1,32 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_prediction\"}}]": "action_predict_stock",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_prediction\"}}, {\"prev_action\": {\"action_name\": \"action_predict_stock\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_prediction\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_sentiment_analysis\"}}]": "action_get_sentiment",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_sentiment_analysis\"}}, {\"prev_action\": {\"action_name\": \"action_get_sentiment\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_sentiment_analysis\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_details\"}}]": "action_inquire_stock_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_details\"}}, {\"prev_action\": {\"action_name\": \"action_inquire_stock_details\"}, \"slots\": {\"stock\": [1.0]}, \"user\": {\"entities\": [\"stock\"], \"intent\": \"get_stock_details\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_sentiment_analysis\"}}]": "utter_ask_stock",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_sentiment_analysis\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_stock\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_sentiment_analysis\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_prediction\"}}]": "utter_ask_stock",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_prediction\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_stock\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_prediction\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_details\"}}]": "utter_ask_stock",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_details\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_stock\"}, \"slots\": {\"stock\": \"should_not_be_set\"}, \"user\": {\"intent\": \"get_stock_details\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"utter_invalid_stock\"}, \"slots\": {\"stock\": \"should_not_be_set\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"utter_invalid_stock\"}, \"slots\": {\"stock\": \"should_not_be_set\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent back"
+    ]
+  }
+}

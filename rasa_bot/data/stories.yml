@@ -1,0 +1,99 @@
+version: "3.1"
+
+stories:
+- story: stock prediction with stock
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_stock_prediction
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_predict_stock
+
+- story: stock prediction without stock
+  steps:
+  - intent: get_stock_prediction
+  - slot_was_set:
+    - stock: null
+  - action: utter_ask_stock
+  - intent: get_stock_prediction
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_predict_stock
+
+- story: sentiment analysis with stock
+  steps:
+  - intent: get_sentiment_analysis
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_get_sentiment
+
+- story: sentiment analysis without stock
+  steps:
+  - intent: get_sentiment_analysis
+  - slot_was_set:
+    - stock: null
+  - action: utter_ask_stock
+  - intent: get_sentiment_analysis
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_get_sentiment
+
+- story: stock recommendation flow
+  steps:
+  - intent: get_stock_recommendations
+  - action: action_recommend_stock
+
+- story: stock details with stock
+  steps:
+  - intent: get_stock_details
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_inquire_stock_details
+
+- story: stock details without stock
+  steps:
+  - intent: get_stock_details
+  - slot_was_set:
+    - stock: null
+  - action: utter_ask_stock
+  - intent: get_stock_details
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_inquire_stock_details
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_stock_prediction
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_predict_stock
+  - intent: get_sentiment_analysis
+    entities:
+    - stock: "AAPL"
+  - slot_was_set:
+    - stock: "AAPL"
+  - action: action_get_sentiment
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

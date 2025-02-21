@@ -1,0 +1,87 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hi finbot
+    - hello finbot
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - thanks bye
+    - that's all for now
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+
+- intent: get_stock_prediction
+  examples: |
+    - what's your prediction for [AAPL](stock)?
+    - predict [TSLA](stock) stock
+    - how will [MSFT](stock) perform?
+    - what's the forecast for [GOOGL](stock)?
+    - predict [NVDA](stock) price
+    - give me a prediction for [AAPL](stock)
+    - what do you think about [TSLA](stock) future price?
+    - price prediction for [MSFT](stock)
+
+- intent: get_sentiment_analysis
+  examples: |
+    - what's the sentiment for [AAPL](stock)?
+    - how do people feel about [GOOGL](stock)?
+    - what's the market sentiment for [MSFT](stock)?
+    - sentiment analysis for [NVDA](stock)
+    - analyze sentiment for [TSLA](stock)
+    - show me sentiment data for [AAPL](stock)
+    - what are people saying about [GOOGL](stock)?
+
+- intent: get_stock_recommendations
+  examples: |
+    - what stocks do you recommend?
+    - which stocks should I look at?
+    - give me some stock recommendations
+    - recommend stocks to buy
+    - what are your top picks?
+    - what are good stocks to invest in?
+    - show me your recommendations
+
+- intent: get_stock_details
+  examples: |
+    - tell me more about [AAPL](stock)
+    - show details for [MSFT](stock)
+    - what are the details for [GOOGL](stock)?
+    - give me information about [NVDA](stock)
+    - show me [TSLA](stock) details
+    - what's happening with [AAPL](stock)?
+    - details about [MSFT](stock)
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way

@@ -1,0 +1,51 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask for stock when missing for any stock-related intent
+  condition:
+  - slot_was_set:
+      - stock: null
+  steps:
+  - or:
+    - intent: get_stock_prediction
+    - intent: get_stock_details
+    - intent: get_sentiment_analysis
+  - action: utter_ask_stock
+
+- rule: Handle invalid stock input
+  condition:
+  - slot_was_set:
+      - stock: null
+  steps:
+  - action: utter_invalid_stock
+
+- rule: Set stock from user input
+  steps:
+  - intent: get_stock_details
+    entities:
+    - stock
+  - action: action_inquire_stock_details
+
+- rule: Set stock for sentiment analysis
+  steps:
+  - intent: get_sentiment_analysis
+    entities:
+    - stock
+  - action: action_get_sentiment
+
+- rule: Set stock for prediction
+  steps:
+  - intent: get_stock_prediction
+    entities:
+    - stock
+  - action: action_predict_stock
